@@ -1,0 +1,17 @@
+#include <unordered_set>
+
+class Solution {
+public:
+    bool hasDuplicate(const vector<int>& nums) {
+        std::unordered_set<int> seen;
+
+        for(int num : nums){
+            auto it = seen.find(num);
+            if (it != seen.end()){
+                return true;
+            }
+            seen.insert(num);
+        }
+        return false;
+    }
+};
